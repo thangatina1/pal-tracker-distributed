@@ -9,5 +9,5 @@ applications:
     REGISTRATION_SERVER_ENDPOINT: http://registration-pal-thanga-ram.cfapps.io
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
-  - tracker-timesheets-databas
+  - tracker-timesheets-database
 
