@@ -70,7 +70,9 @@ jobs:
           CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
 
   deploy-backlog:
-    needs: build-and-publish
+    needs:
+      - build-and-publish
+      - deploy-timesheets
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -98,7 +100,9 @@ jobs:
           CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
 
   deploy-registration:
-    needs: build-and-publish
+    needs:
+      - build-and-publish
+      - deploy-allocations
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -126,7 +130,9 @@ jobs:
           CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
 
   deploy-timesheets:
-    needs: build-and-publish
+    needs:
+      - build-and-publish
+      - deploy-registration
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
