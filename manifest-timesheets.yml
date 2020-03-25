@@ -6,9 +6,10 @@ applications:
   memory: 1G
   instances: 1
   env:
-#    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-thanga-ram.cfapps.io
+    GRANT_TYPE: client_credentials
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
-  services:
-  - tracker-timesheets-database
-  - tracker-service-registry
+    services:
+      - tracker-allocations-database
+      - tracker-service-registry
+      - tracker-sso
 
